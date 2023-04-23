@@ -4,6 +4,7 @@
 |-------------------|-------------------------------|
 | Language/Framework| Python/FastApi                |
 | Database          | sqlite                        |
+| Query Language    | graphql/strawberry            |
 
 ## Problem Statement: 
 to create a **_dockerized_** service, **claim_process**  to process claims. 
