@@ -30,33 +30,6 @@ class ClaimController:
         except Exception as e:
             log.error("create_claim error: ", e)
             raise HTTPException(status_code=500, detail="Internal server error")
-    
-    # pseudo code to indicate how **claim_process** will communicate with **payments** and how to handle failure
-    # def create_claim(self, claim: ClaimInput, session: Session = Depends(get_session)):
-    #     try:
-    #         # Start a transaction
-    #         with session.begin():
-    #             # Insert the claim into the database
-    #             db_claim = Claim.from_orm(claim)
-    #             self.claim_service.create_claim(db_claim, session)
-
-    #             # Calculate the net fee
-    #             net_fee = self.claim_service.calculate_net_fee(claim)
-
-    #             # Call the payments API to process the payment
-    #             # We can use the HTTPClient to make a POST request to the payments API here
-    #             # We can also retry this post request a fixed number of times in case of failures
-    #             payment_successful = True
-
-    #             if payment_successful:
-    #                 return net_fee
-    #             else:
-    #                 # If the payment was not successful, raise an error to rollback the transaction
-    #                 raise ValueError("Payment failed")
-    #     except SQLAlchemyError as e:
-    #         # Handle the error and rollback the transaction
-    #         session.rollback()
-    #         raise e
 
 
     def get_claim_by_id(self, claim_id: int, session: Session = Depends(get_session)):
