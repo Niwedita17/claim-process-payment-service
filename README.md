@@ -1,9 +1,9 @@
 # claim-process-payment-service
 
-| Service name | claim-process-payment-service |
-|------|-----|
-| Language/Framework| Python/FastApi |
-| Database | sqlite |
+| Service name      | claim-process-payment-service |
+|-------------------|-------------------------------|
+| Language/Framework| Python/FastApi                |
+| Database          | sqlite                        |
 
 ## Problem Statement: 
 to create a **_dockerized_** service, **claim_process**  to process claims. 
@@ -86,8 +86,6 @@ This endpoint retrieves the top 10 provider_npis by net fees generated.
 - Response
    - [provider_npi]
 
-
-## how **claim_process** will communicate with **payments**.
 
 # Handling Multiple instances
 If multiple instances of either service are running concurrently to handle a large volume of claims, care must be taken to ensure that each instance is processing unique claims and that there are no database conflicts.
